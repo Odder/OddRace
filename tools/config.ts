@@ -104,6 +104,9 @@ const SYSTEM_CONFIG_DEV = {
   packages: {
     angular2: { defaultExtension: false },
     rxjs: { defaultExtension: false }
+  },
+  map: {
+    'firebase-angular2': `${APP_BASE}node_modules/firebase-angular2`
   }
 };
 
