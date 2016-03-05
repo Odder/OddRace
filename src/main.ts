@@ -1,17 +1,28 @@
 import {provide, enableProdMode} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 import {ROUTER_PROVIDERS, APP_BASE_HREF} from 'angular2/router';
-import {AppCmp} from './components/app';
+import {AppCmp} from './app/app';
+//import {ChatCmp} from './room/components/chat.component';
 import {FirebaseService} from 'firebase-angular2/core';
+import {FirebaseChatService} from './services/chat.service';
 
 if ('<%= ENV %>' === 'prod') { enableProdMode(); }
 
 declare var Firebase;
 
 bootstrap(AppCmp, [
-  ROUTER_PROVIDERS,
-  provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' }),
-  provide(FirebaseService, { useFactory: () => new FirebaseService(new Firebase('https://cuberace.firebaseio.com'))})
+    ROUTER_PROVIDERS,
+    provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' }),
+    provide(
+        FirebaseChatService,
+        {
+            useFactory: () => new FirebaseChatService(
+                new FirebaseService(
+                    new Firebase('https://cuberace.firebaseio.com')
+                )
+            )
+        }
+    )
 ]);
 
 // In order to start the Service Worker located at "./sw.js"

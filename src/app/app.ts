@@ -4,11 +4,12 @@ import {
     ROUTER_DIRECTIVES
 } from 'angular2/router';
 
-import {RoomCmp} from 'room/room.component';
+import {RoomCmp} from '../room/room.component';
 
 @Component({
     selector: 'app',
     moduleId: module.id,
+    //viewProviders: [FirebaseChatService],
     templateUrl: './app.html',
     styleUrls: ['./app.css'],
     encapsulation: ViewEncapsulation.None,

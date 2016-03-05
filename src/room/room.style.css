@@ -1,0 +1,23 @@
+.leftColumn {
+    flex-grow: 1;
+}
+
+.rightColumn {
+    max-width: 500px;
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+}
+
+.box {
+    width: 480px;
+    height: calc(50vh - 20px);
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 0px rgba(120, 120, 120,0.5);
+    margin: 10px;
+    box-sizing: border-box;
+
+    padding: 20px;
+
+}

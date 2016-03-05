@@ -1,0 +1,18 @@
+body {
+
+    background-color: rgb(230, 230, 230);
+
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+
+}
+
+room {
+    width: 100%;
+    height: calc(100% - 50px);
+    display: flex;
+    flex-flow: row;
+    flex-grow: 1;
+}

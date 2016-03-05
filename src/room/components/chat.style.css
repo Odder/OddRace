@@ -1,0 +1,16 @@
+span {
+	display: block;
+}
+
+.messages {
+	height: calc(100% - 70px);
+	overflow-y: scroll;
+	overflow-x: auto;
+}
+
+h2 {
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid;
+
+}

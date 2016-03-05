@@ -1,0 +1,14 @@
+<h2>Chat</h2>
+<section class="messages">
+	<span *ngFor="#Message of Messages | async">
+		<strong>{{ Message.User }}:</strong> &nbsp; {{ Message.Message }}
+	</span>
+</section>
+<form class="chat-form" (ngSubmit)="sendMessage()" novalidate>
+	<input
+		type="text" 
+		ngControl="message"
+		[(ngModel)]="message"
+		placeholder="Do stuff" 
+		(keyup.escape)="clear()" />
+</form>
