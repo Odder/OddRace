@@ -1,10 +1,12 @@
 import {provide, enableProdMode} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 import {ROUTER_PROVIDERS, APP_BASE_HREF} from 'angular2/router';
+
 import {AppCmp} from './app/app';
-//import {ChatCmp} from './room/components/chat.component';
+
 import {FirebaseService} from 'firebase-angular2/core';
 import {FirebaseChatService} from './services/chat.service';
+import {AUTH_PROVIDERS} from './services/auth/providers';
 
 if ('<%= ENV %>' === 'prod') { enableProdMode(); }
 
@@ -12,6 +14,7 @@ declare var Firebase;
 
 bootstrap(AppCmp, [
     ROUTER_PROVIDERS,
+    AUTH_PROVIDERS,
     provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' }),
     provide(
         FirebaseChatService,
