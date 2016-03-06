@@ -19,8 +19,6 @@ export class SignInCmp {
 	}
 
 	private postSignIn(): void {
-		console.log(this.auth.data);
-
-		//		this.router.navigate(['/race']);
+		this.router.navigate(['/Race']);
 	}
 }
